@@ -24,6 +24,10 @@ async function run() {
     await client.connect();
 
     const groupCollection=client.db('groupDB').collection('group')
+    app.get('/group',async(req,res)=>{
+      const result= await groupCollection.find().toArray();
+      res.send(result)
+    })
     app.post('/group',async(req,res)=>{
       const groupData=req.body;
       console.log(groupData)
