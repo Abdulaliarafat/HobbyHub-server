@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 require('dotenv').config()
 const app=express();
 const port=process.env.PORT || 3000;
@@ -26,6 +26,18 @@ async function run() {
     const groupCollection=client.db('groupDB').collection('group')
     app.get('/group',async(req,res)=>{
       const result= await groupCollection.find().toArray();
+      res.send(result)
+    })
+   app.get('/group/:email',async(req,res)=>{
+    const email=req.params.email;
+    const query={email:email};
+    const result=await groupCollection.find(query).toArray();
+    res.send(result)
+   })
+    app.get('/group/:id',async(req,res)=>{
+      const id=req.params.id;
+      const query={_id:new ObjectId(id)}
+      const result=await groupCollection.findOne(query);
       res.send(result)
     })
     app.post('/group',async(req,res)=>{
