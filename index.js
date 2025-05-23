@@ -28,13 +28,13 @@ async function run() {
       const result= await groupCollection.find().toArray();
       res.send(result)
     })
-   app.get('/group/:email',async(req,res)=>{
+   app.get('/group/email/:email',async(req,res)=>{
     const email=req.params.email;
     const query={email:email};
     const result=await groupCollection.find(query).toArray();
     res.send(result)
    })
-    app.get('/group/:id',async(req,res)=>{
+    app.get('/group/id/:id',async(req,res)=>{
       const id=req.params.id;
       const query={_id:new ObjectId(id)}
       const result=await groupCollection.findOne(query);
@@ -44,6 +44,17 @@ async function run() {
       const groupData=req.body;
       console.log(groupData)
       const result=await groupCollection.insertOne(groupData);
+      res.send(result)
+    })
+    app.put('/group/id/:id',async(req,res)=>{
+      const id=req.params.id;
+      const filter={_id:new ObjectId(id)};
+      const update=req.body
+      const options = { upsert: true };
+      const updateGroup={
+        $set:update
+      }
+      const result=await groupCollection.updateOne(filter,updateGroup,options)
       res.send(result)
     })
 
