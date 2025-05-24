@@ -29,9 +29,12 @@ async function run() {
       res.send(result)
     })
 
-    app.get('/group/latest',async(req,res)=>{ 
-      const sortField={date:-1}
-      const result= await groupCollection.find().sort(sortField).limit(4).toArray()
+    app.get('/group/latest',async(req,res)=>{
+      const today=new Date();
+      const start=new Date(today.setHours(0,0,0,0));
+      const end=new Date (today.setHours(23,59,59,999));
+      const sortField={date:- 1}
+      const result= await groupCollection.find({date:{$gte: start,$lte:end}}).sort(sortField).limit(6).toArray()
       res.send(result)
     })
    app.get('/group/email/:email',async(req,res)=>{
