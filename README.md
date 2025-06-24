@@ -1,4 +1,4 @@
-# Node.js Express Server with MongoDB
+# HobbyHub Server
 
 This is a simple Node.js backend application built using Express.js. It includes support for environment variables via dotenv, handles cross-origin requests with CORS, and connects to a MongoDB database.
 
