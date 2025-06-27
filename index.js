@@ -21,8 +21,8 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-
+    await client.connect(); 
+    // database
     const groupCollection = client.db('groupDB').collection('group')
     // All group
     // app.get('/group/all',async(req,res)=>{ 
