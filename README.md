@@ -37,7 +37,6 @@
 | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) | JavaScript runtime |
 | ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) | Server framework |
 | ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) | NoSQL database |
-| ![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white) | MongoDB ODM |
 | ![dotenv](https://img.shields.io/badge/dotenv-8DD6F9?style=for-the-badge&logo=dotenv&logoColor=black) | Environment config |
 | ![CORS](https://img.shields.io/badge/CORS-enabled-blue?style=for-the-badge) | Middleware for cross-origin requests |
 
@@ -57,3 +56,10 @@
 | GET    | `/`                    | Root route for server check              |
 
 ---
+## 📦 Dependencies
+
+```bash
+express
+cors
+dotenv
+mongodb
