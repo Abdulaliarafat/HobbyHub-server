@@ -5,6 +5,13 @@
 ---
 ## 💻 Getting Started Locally
 
+# git clone https://github.com/Abdulaliarafat/BitClock-server.git
+# cd BitClock-server
+# npm install
+# npm i express
+# http://localhost:3000
+# npm start
+---
 
 ## 🌐 Live URLs
 
