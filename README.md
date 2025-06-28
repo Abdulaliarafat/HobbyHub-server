@@ -5,7 +5,7 @@
 ---
 ## 💻 Getting Started Locally
 
-# git clone https://github.com/Abdulaliarafat/BitClock-server.git
+# git clone https://github.com/Abdulaliarafat/HobbyHub-server.git
 # cd BitClock-server
 # npm install
 # npm i express
